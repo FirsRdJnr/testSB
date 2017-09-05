@@ -42,19 +42,20 @@ function renderReceipt($container, $receipt) {
       // +
       // formatReturns(data.odds, data.stake));
 
-    $receipt.find('.receipt__returns').text(' could return £' +
+      $receipt.find('.receipt__returns').text(' could return £' +
         data.stake + formatReturns(data.odds, data.stake)
         );
 
-    $receipt.find('.receipt__transaction-id').text(data.transaction_id);
-    $container.append($receipt);
-}
+      $receipt.find('.receipt__transaction-id').text(data.transaction_id);
+      $container.append($receipt);
+  }
 
-function removeSelection(selectionId) {
-    $('#selection-' + selectionId).animate({'opacity': 0}, 500).animate({'height':0},200,function()
+  function removeSelection(selectionId) {
+    $('#selection-' + selectionId).animate({'opacity': 0}, 500).animate({'height':30},200,function()
     {
-        $('#selection-' + selectionId).remove();
-    })
+       // $('#selection-' + selectionId).remove();
+   })
+
 }
 
 function formatOdds(odds) {
@@ -84,7 +85,6 @@ $.get('http://skybettechtestapi.herokuapp.com/available')
 .done(renderBets.bind(this, $bets, $templates['bet']))
 .fail(betLoadError);
 
-
 /**
  * @todo Think about how the betslip show behave when selections are added and removed
  */
@@ -101,12 +101,15 @@ $.get('http://skybettechtestapi.herokuapp.com/available')
         renderSelection($selections, $selection);
         $(".selection-table").animate({'opacity': 1}, 500);
         betslip.push(betId);
-
-
     } else {
         removeSelection(betId);
+        $('#selection-' + betId).fadeIn(function() {
+            $(this).text("Removed from Your Betslip").animate({'opacity': 1},500,function(){
+                $('#selection-' + betId).animate({'opacity':0},1000).animate({'height':0},200)
+                setTimeout(function(){$('#selection-' + betId).remove() },1500);
+            });
+        });
         betslip.splice(betslip.indexOf(betId), 1);
-
     }
 });
 
@@ -132,6 +135,14 @@ $.get('http://skybettechtestapi.herokuapp.com/available')
         function (data) {
                 //remove bet from selections and add to the receipts
                 removeSelection(data.bet_id);
+                $('#selection-' + data.bet_id).fadeIn(function() {
+                  $(this).text("Added to Your Receipt").animate({'opacity': 1},500,function(){
+                     $('#selection-' + data.bet_id).animate({'opacity':0},1000).animate({'height':0},200)
+                     setTimeout(function(){$('#selection-' + data.bet_id).remove() },2000);
+                 })
+
+              });
+                
                 var $receipt = $templates['receipt'].clone();
                 $receipt.data(data);
                 renderReceipt($receipts, $receipt);
