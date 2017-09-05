@@ -174,8 +174,20 @@ td{
 .selection__title{
     font-size: 14px;
 }
+.selection__stake input{
+    height: 18px;
+    font-size: 12px;
+
+}
 .receipt__title{
     font-size: 14px;
+}
+.circle-point{
+    float: right !important; 
+    height: 7px;
+    width: 7px;
+    border-radius: 5px;
+    background-color: #BADA55;
 }
 .js-stake{
     width:40px;
@@ -186,8 +198,8 @@ td{
 }
 
 .is-invalid{
-    background-color: #fff;
-    color: #000;
+    background-color: #f00;
+    color: #fff;
 }
 .is-hidden {
     display: none;

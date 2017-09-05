@@ -16,7 +16,11 @@
 * add error handling
 * add some lines for better design in 'renderTables'
 * add LESS for CSS - any dynamic branding need this for quick management and development
-* and more... (better design, better code, optimistion, manual QA)
+* and more... (better design, better code, optimisation, manual QA, some font bold, )
+* add UI for Desktop/Large Mobile...
+* add some tables could be convert to DIV
+* add fade for collapse Betslip & Receipts
+* add fixed width and align to left/right in receipt - all message in one line
 
 Thank you,
 Adam

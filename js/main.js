@@ -38,9 +38,14 @@ function renderReceipt($container, $receipt) {
     $receipt.find('.receipt__stake').text('£' +
       data.stake +
       ' @ ' +
-      formatOdds(data.odds) +
-      ' could return £' +
-      formatReturns(data.odds, data.stake));
+      formatOdds(data.odds) );
+      // +
+      // formatReturns(data.odds, data.stake));
+
+    $receipt.find('.receipt__returns').text(' could return £' +
+        data.stake + formatReturns(data.odds, data.stake)
+        );
+
     $receipt.find('.receipt__transaction-id').text(data.transaction_id);
     $container.append($receipt);
 }
@@ -58,7 +63,7 @@ function formatOdds(odds) {
 
 function formatReturns(odds, stake) {
     var nil = 0;
-    return stake > 0 ? ((1 + (odds.numerator / odds.denominator)) * stake).toFixed(2) : nil.toFixed(2);
+    return stake > 0 ? ((1 + (odds.numerator / odds.denominator)) * stake).toFixed(2) : nil.toFixed(2) ;
 }
 
 function betLoadError(error) {

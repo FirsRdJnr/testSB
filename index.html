@@ -12,7 +12,7 @@
 <body>
 <div id="error"></div>
  <div class="wrapper">
-     <div class="sbg-logo logo"></div>
+     <a href=""><div class="sbg-logo logo"></div></a>
      <div class="header">
         <h1><strong>Sky Betting and Gaming</strong></h1>
         <h2>Interaction Design Test</h2>
@@ -43,6 +43,7 @@
         <td class="bet__event"></td>
         <td class="bet__name"></td>
         <td class="bet__odds js-odds"></td>
+        <td class="bet__click js-odds"><div class="circle-point"></div></td>
     </tr>
 </script>
 <script type="text/template" id="selection">
@@ -56,7 +57,7 @@
                     </td>
                     <td class="selection__returns js-returns"></td>
                     <td class="selection__action">
-                        <button type="submit" class="js-place-bet" disabled>Place Bet</button>
+                        <button type="submit" class="js-place-bet" enabled>Place Bet</button>
                     </td>
 
                 </tr>
@@ -72,6 +73,7 @@
                 <td class="receipt__stake"></td>
                 <td class="receipt__returns"></td>
                 <td class="receipt__transaction-id"></td>
+                <td class="receipt__info"></td>
             </tr>
         </tbody>
     </table>
