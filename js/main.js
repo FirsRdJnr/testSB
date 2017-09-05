@@ -132,10 +132,11 @@ $.get('http://skybettechtestapi.herokuapp.com/available')
                 renderReceipt($receipts, $receipt);
                 $(".receipt-table").animate({'opacity': 1}, 500);
             }
-            ).fail(function (e) {
+            ).fail(function (e, jqXHR, textStatus, errorThrown) {
                 //@todo show error message returned from the server
                 $selection.addClass('is-invalid');
                 console.error(e);
+                // $("#error").html(jqXHR.responseText);
             }
             );
         } else {

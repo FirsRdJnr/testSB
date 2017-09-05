@@ -237,7 +237,7 @@ td{
     }
     .wrapper {
         grid-gap: 20px;
-        grid-template-columns: fit-content 200px 220px;
+        grid-template-columns: fit-content 25% 25%;
         grid-template-areas:
         "logo  header  header"
         "sidebar content sidebar2";
