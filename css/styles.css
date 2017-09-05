@@ -24,7 +24,8 @@ body{
     font-family: sky-regular ;
     margin: 0.5em;
 }
-html{}
+html{
+}
 strong{
     font-family: sky-medium ;
 }
@@ -47,7 +48,7 @@ caption{
 }
 table{
     width: 100%;
-        border-spacing: 1px;
+    border-spacing: 1px;
 }
 td{
     padding: 7px;
@@ -71,6 +72,7 @@ td{
     "sidebar sidebar"
     "content content"
     "sidebar2 sidebar2";
+
 }
 .sbg-logo{
     grid-area: logo;
@@ -86,6 +88,9 @@ td{
     /*text-transform: uppercase;*/
     /*background-color: #f60;*/
 }
+.bet-list h1{
+    text-align: center;
+}
 .bet-list{
     grid-area: sidebar;
     font-size: 10pt;
@@ -98,18 +103,29 @@ td{
     font-size: 10pt;
     grid-area: content;
     color: #fff;
-    /*background-color: #f06;*/
+    background-color: rgba(255, 0, 0, 0.28);
+
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s; /* Safari */
+    transition: all 0.2s;
 }
 
 .receipts{
     text-align: center;
+    font-size: 10pt;
     grid-area: sidebar2;
     color: #fff;
-    /*background-color: #60F;*/
+    background-color: rgba(0, 255, 81, 0.28);
+
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s; /* Safari */
+    transition: all 0.2s;
 }
 .box {
     /*padding: 0 10px;*/
-  border-radius: 3px;
+    border-radius: 3px;
 }
 .spinner {
     -webkit-animation-name: spinner;
@@ -142,14 +158,23 @@ td{
      transform: rotate(360deg);
  }
 }
+.receipt-table{
+    margin-top:1em;
+    width: 100%;
+    opacity: 0;
+}
 .selection-table{
     margin-top:1em;
-    width: 100%
+    width: 100%;
+    opacity: 0;
 }
 .selection__returns{
     padding: 0px;
 }
 .selection__title{
+    font-size: 14px;
+}
+.receipt__title{
     font-size: 14px;
 }
 .js-stake{
@@ -168,13 +193,32 @@ td{
     display: none;
 }
 
+.js-place-bet {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.js-place-bet[disabled]{
+    opacity: 0.2;
+}
+
+/*.fade.in { opacity:1; }*/
+.fade {  opacity: 0; -webkit-transition: opacity 0.8s ease-in; }
+
 @media only screen and (min-width: 500px)  {
     .header{
         text-align: right;
         /*background: url(img/page/logo-sky-betting-and-gaming.png) left no-repeat;*/
     }
     .wrapper {
-        grid-template-columns: 20% auto;
+        grid-template-columns: 40% auto;
         grid-template-areas:
         "logo header"
         "sidebar content"
@@ -193,7 +237,7 @@ td{
     }
     .wrapper {
         grid-gap: 20px;
-        grid-template-columns: fit-content auto 120px;
+        grid-template-columns: fit-content 200px 220px;
         grid-template-areas:
         "logo  header  header"
         "sidebar content sidebar2";
