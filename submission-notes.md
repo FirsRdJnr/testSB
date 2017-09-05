@@ -16,6 +16,7 @@
 * add error handling
 * add some lines for better design in 'renderTables'
 * add LESS for CSS - any dynamic branding need this for quick management and development
+* and more... (better design, better code, optimistion, manual QA)
 
 Thank you,
 Adam
