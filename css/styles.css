@@ -19,15 +19,15 @@
     font-style:normal;
     font-weight:400
 }
-strong{
-    font-family: sky-medium ;
-}
 body{
     background: url(img/page/bg.jpg) center top no-repeat fixed #010834;
     font-family: sky-regular ;
-    margin: 20px;
+    margin: 0.5em;
 }
 html{}
+strong{
+    font-family: sky-medium ;
+}
 h1{
     font-size: 12pt;
 }
@@ -40,7 +40,29 @@ h3{
 p{
     font-size: 8pt;
 }
-
+caption{
+    /*margin: 1em;*/
+    font-family:sky-medium;
+    font-size: 12pt;
+}
+table{
+    width: 100%;
+        border-spacing: 1px;
+}
+td{
+    padding: 7px;
+    color: #fff;
+    border-top: 1px solid #34488a;
+    border-bottom: 3px solid #070B19;
+    background: #1d337d;
+    /*background: #1d337d url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);*/
+    background: -moz-linear-gradient(top,#1d337d 0,#132869 100%) no-repeat;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#1d337d),color-stop(100%,#132869)) no-repeat;
+    background: -webkit-linear-gradient(top,#1d337d 0,#132869 100%) no-repeat;
+    background: -o-linear-gradient(top,#1d337d 0,#132869 100%) no-repeat;
+    background: -ms-linear-gradient(top,#1d337d 0,#132869 100%) no-repeat;
+    background: linear-gradient(to bottom,#1d337d 0,#132869 100%) no-repeat;
+}
 .wrapper{
     display: grid;
     grid-gap: 1em;
@@ -52,7 +74,7 @@ p{
 }
 .sbg-logo{
     grid-area: logo;
-    width:155px;
+    width:150px;
     height:45px;
     background: url(img/page/logo-sky-betting-and-gaming.png) center no-repeat;
 }
@@ -67,20 +89,26 @@ p{
 .bet-list{
     grid-area: sidebar;
     font-size: 10pt;
-    background-color: #0f6;
+    color: #fff;
+    /*background-color: #0f6;*/
 }
 
 .betslip{
+    text-align: center;
+    font-size: 10pt;
     grid-area: content;
-    background-color: #f06;
+    color: #fff;
+    /*background-color: #f06;*/
 }
 
 .receipts{
+    text-align: center;
     grid-area: sidebar2;
-    background-color: #60F;
+    color: #fff;
+    /*background-color: #60F;*/
 }
 .box {
-    padding: 0 10px;
+    /*padding: 0 10px;*/
   border-radius: 3px;
 }
 .spinner {
@@ -113,6 +141,19 @@ p{
  to {
      transform: rotate(360deg);
  }
+}
+.selection-table{
+    margin-top:1em;
+    width: 100%
+}
+.selection__returns{
+    padding: 0px;
+}
+.selection__title{
+    font-size: 14px;
+}
+.js-stake{
+    width:40px;
 }
 
 .js-toggle {
